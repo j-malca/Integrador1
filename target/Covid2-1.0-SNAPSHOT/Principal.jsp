@@ -15,18 +15,18 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-lig" style="background-color: #e3f2fd;" >
   <div class="container-fluid">
-    <a class="btn btn-outline-success" href="#">Principal</a>
+    <a class="btn btn-outline-success" href="Graficas.jsp" target="iframeprincipla">Principal</a>
     
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a style="margin-left: 10px; border:none"   class="btn btn-outline-success" aria-current="page" href="#">Usuarios</a>
+          <a style="margin-left: 10px; border:none"   class="btn btn-outline-success" aria-current="page" href="trabajadores.jsp" target="iframeprincipla">Trabajadores</a>
         </li>
         <li class="nav-item">
           <a style="margin-left: 10px; border:none" class="btn btn-outline-success" href="#">Categorias</a>
         </li>
         <li class="nav-item">
-            <a  style="margin-left: 10px; border:none" class="btn btn-outline-success" href="Preguntas.jsp" target="iframeprincipla" >Preguntas </a>
+            <a  style="margin-left: 10px; border:none" class="btn btn-outline-success" href="preguntas2.jsp" target="iframeprincipla" >Preguntas </a>
         </li>
         <li class="nav-item">
             <a  style="margin-left: 10px; border:none" class="btn btn-outline-success" href="Graficas.jsp" target="iframeprincipla" >Estadistica </a>
@@ -37,7 +37,7 @@
     
     <div class="dropdown align-top">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
+    Dropdown butkkkon
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -48,12 +48,17 @@
   </div>
 </nav>
         
-        <div class="m-4" style="height: 550px">
+        
+        
+        
+        
+        
+        
+        <div class="m-4" style="height: 800px">
             <iframe name="iframeprincipla" style="height:100%;width:100%"></iframe>
         </div>
-       
         
-        
+      
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="bootstrap/js/jquery.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
