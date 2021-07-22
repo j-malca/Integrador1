@@ -35,17 +35,11 @@
 	<!--  fila 1  -->
     <table class="table table-hover">
   <thead>
-      <tr >
-      <th colspan="4" scope="col">Preguntas</th>
-      <th scope="col"> <a href="Registrar_preguntas.jsp"><i class="fa fa-user-plus" aria-hidden="true"></i> </th>
-      
-    </tr>
+
        <tr >
-      <th  scope="col">ID</th>
-      <th scope="col">categoria </th>
-      <th  scope="col">Calificacion </th>
+      <th  scope="col">N°</th>
       <th scope="col">Pregunta</th>
-      <th scope="col">Acciones</th>
+      <th scope="col">Respuesta</th>
     </tr>
     
   </thead>
@@ -64,12 +58,12 @@
                                         
                                       <tr>
                                          <th scope="row"> <%= rs.getString(1) %> </th>
-                                        <td><%= rs.getString(2) %></td>
-                                        <td><%= rs.getString(3) %></td>
                                         <td><%= rs.getString(4) %></td>
-                                        <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
-                                        <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
-                                        
+                                        <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="s">
+                                        <label class="form-check-label" for="inlineRadio1">Si</label></td>
+                                        <td> <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="n">
+                                         <label class="form-check-label" for="inlineRadio2">No</label></td>
+                                                                               
 
                                       </tr>  
                                      
@@ -80,9 +74,15 @@
                                  }    
                      %>
    
-   
+ 
   </tbody>
+ 
 </table>
+                     
+         <div class="">
+  <button class="btn btn-primary btn-md " data-toggle="button"type="submit">Enviar</button> 
+  <button class="btn btn-primary btn-md " data-toggle="button"type="reset">Limpiar</button>
+ </div>               
 </div>
    
 </form>
