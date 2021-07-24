@@ -23,10 +23,6 @@
                 
      %>
 <!------>
-
-
-<br>
-<!------- navbar---->
 <div class="container" >
 
 <br>
@@ -35,11 +31,17 @@
 	<!--  fila 1  -->
     <table class="table table-hover">
   <thead>
-
+      <tr >
+      <th colspan="4" scope="col">Preguntas</th>
+      <th scope="col"> <a href="Registrar_preguntas.jsp"><i class="fa fa-user-plus" aria-hidden="true"></i> </th>
+      
+    </tr>
        <tr >
-      <th  scope="col">N°</th>
+      <th  scope="col">ID</th>
+      <th scope="col">categoria </th>
+      <th  scope="col">Calificacion </th>
       <th scope="col">Pregunta</th>
-      <th scope="col">Respuesta</th>
+      <th scope="col">Acciones</th>
     </tr>
     
   </thead>
@@ -58,12 +60,12 @@
                                         
                                       <tr>
                                          <th scope="row"> <%= rs.getString(1) %> </th>
+                                        <td><%= rs.getString(2) %></td>
+                                        <td><%= rs.getString(3) %></td>
                                         <td><%= rs.getString(4) %></td>
-                                        <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="s">
-                                        <label class="form-check-label" for="inlineRadio1">Si</label></td>
-                                        <td> <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="n">
-                                         <label class="form-check-label" for="inlineRadio2">No</label></td>
-                                                                               
+                                        <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+                                        <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                                        
 
                                       </tr>  
                                      
@@ -74,21 +76,22 @@
                                  }    
                      %>
    
- 
+   
   </tbody>
- 
 </table>
-                     
-         <div class="">
-  <button class="btn btn-primary btn-md " data-toggle="button"type="submit">Enviar</button> 
-  <button class="btn btn-primary btn-md " data-toggle="button"type="reset">Limpiar</button>
- </div>               
 </div>
    
 </form>
 
 
-
+	<nav class="navbar navbar-light alert-info"style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">
+   <!--- <img src="img/logozeus.png" width="60" height="60" class="d-inline-block align-top" alt="">--->
+  </a>
+  <div class="footer">
+						Copyright &copy; Zeus.com 2020
+		</div>
+</nav>
 </div>
 
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

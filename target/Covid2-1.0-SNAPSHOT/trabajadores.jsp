@@ -143,7 +143,9 @@
             Class.forName("com.mysql.jdbc.Driver");
            con = DriverManager.getConnection("jdbc:mysql://localhost/dbscovid?user=root&password=");
            st = con.createStatement();
-                                    rs = st.executeQuery("SELECT USUARIOS.id_usuarios,USUARIOS.numero_doc_usu,USUARIOS.nom_usu,USUARIOS.apep_usu,USUARIOS.apem_usu,TIPO_DOCUMENTO.desc_tipo_doc FROM USUARIOS INNER JOIN TIPO_DOCUMENTO ON   USUARIOS.id_tipo_doc = TIPO_DOCUMENTO.id_tipo_doc" );
+                                    rs = st.executeQuery("SELECT trabajadores.id_trabajador ,trabajadores.numero_doc_usu,trabajadores.nom_usu,"
+                                            + "trabajadores.apep_usu,trabajadores.apem_usu,TIPO_DOCUMENTO.desc_tipo_doc "
+                                            + "FROM trabajadores INNER JOIN TIPO_DOCUMENTO ON   trabajadores.id_tipo_doc = TIPO_DOCUMENTO.id_tipo_doc" );
                                     while (rs.next()){
                                     
                                         %>
@@ -158,8 +160,6 @@
                                           <td><%= rs.getString(6) %></td>
                                         <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
                                         <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
-                                        
-
                                       </tr>  
                                      
                                         <%

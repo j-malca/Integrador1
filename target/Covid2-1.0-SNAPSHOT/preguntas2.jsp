@@ -134,21 +134,17 @@
             Class.forName("com.mysql.jdbc.Driver");
            con = DriverManager.getConnection("jdbc:mysql://localhost/dbscovid?user=root&password=");
            st = con.createStatement();
-                                    rs = st.executeQuery(" SELECT preguntas.id_pregunta,CATEGORIA_PREGUNTAS.des_cate_preg,CALIFICACION_PREGUNTA.desc_cal_preg,desc_preg FROM preguntas INNER JOIN CATEGORIA_PREGUNTAS  on CATEGORIA_PREGUNTAS.id_cate_preg = preguntas.id_cate_preg INNER JOIN CALIFICACION_PREGUNTA  on CALIFICACION_PREGUNTA.id_cal_preg = preguntas.id_cal_preg" );
+                                    rs = st.executeQuery("SELECT @i := @i + 1 as Numeracion,preguntas.id_pregunta,CATEGORIA_PREGUNTAS.des_cate_preg,CALIFICACION_PREGUNTA.desc_cal_preg,desc_preg FROM preguntas INNER JOIN CATEGORIA_PREGUNTAS on CATEGORIA_PREGUNTAS.id_cate_preg = preguntas.id_cate_preg INNER JOIN CALIFICACION_PREGUNTA on CALIFICACION_PREGUNTA.id_cal_preg = preguntas.id_cal_preg cross join (select @i := 0)r;");
                                     while (rs.next()){
                                     
-                                        %>
- 
-                                        
+                                        %>                                          
                                       <tr>
                                          <th scope="row"> <%= rs.getString(1) %> </th>
-                                        <td><%= rs.getString(2) %></td>
                                         <td><%= rs.getString(3) %></td>
                                         <td><%= rs.getString(4) %></td>
+                                        <td><%= rs.getString(5) %></td>
                                         <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
                                         <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
-                                        
-
                                       </tr>  
                                      
                                         <%

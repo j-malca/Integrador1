@@ -22,9 +22,14 @@
         <li class="nav-item">
           <a style="margin-left: 10px; border:none"   class="btn btn-outline-success" aria-current="page" href="trabajadores.jsp" target="iframeprincipla">Trabajadores</a>
         </li>
-        <li class="nav-item">
-          <a style="margin-left: 10px; border:none" class="btn btn-outline-success" href="#">Categorias</a>
-        </li>
+        <li class="nav-item dropdown">
+    <a class="nav-link dropdown btn btn-outline-success" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="Tipo_Preguntas.jsp" target="iframeprincipla">Tipo Preguntas</a>
+      <a class="dropdown-item" href="Estado_Usuario.jsp" target="iframeprincipla">Estado de Usuario</a>
+      <a class="dropdown-item" href="Ubicacion_de_registro.jsp" target="iframeprincipla">Ubicacion de Regsitro</a>
+            
+  </li>  
         <li class="nav-item">
             <a  style="margin-left: 10px; border:none" class="btn btn-outline-success" href="preguntas2.jsp" target="iframeprincipla" >Preguntas </a>
         </li>
@@ -35,15 +40,17 @@
  
     </div>
     
-    <div class="dropdown align-top">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown butkkkon
+  <div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Salir</a>
+  </div>
 </div>
   </div>
 </nav>

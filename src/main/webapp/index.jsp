@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+		<meta charset="UTF-8">
 	<title>Document</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0 ">
+         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<title>Principal</title>
 </head>
@@ -23,24 +24,23 @@
 	<br>
 	<br>
 	<br>
-
+ 
 <table class="table table-hover">
 <tbody>
 	 <tr rowspan="3">
-	 	<td ><button type="button" class="btn btn-primary btn-lg btn-block">Gestionar Ingreso</button></td>
-	 	<td ><button type="button" class="btn btn-secondary btn-lg btn-block" ><a href="Login.jsp">Admiistaración</a></button></td>
+             <td ><button type="button" class="btn btn-warning btn-lg btn-block"><h1>Gestionar Ingreso</h1><a href="Cuestionario.jsp"><i class="fa fa-paper-plane fa-5x" aria-hidden="true"></i></button></td>
+	 	
 	 </tr>
  	 <tr rowspan="3">
- 	 	<td><button type="button" class="btn btn-warning btn-lg btn-block " <a class="dropdown-item" href="#" > Pase  </button></td>
-	 	<td><button type="button" class="btn btn-secondary btn-lg btn-block">Reporte</button></td>
-	
+             
+             <td><button type="button" class="btn btn-warning btn-lg btn-block"><h1>Administracion</h1><a href="Login.jsp"><i class="fa fa-users fa-5x" aria-hidden="true"></i> </button></td>
  	 </tr>
+         <tr rowspan="3">m
+             <td><button type="button" class="btn btn-warning btn-lg btn-block"><h1>Reportes</h1> <a href="Graficas.jsp"><i class="fa fa-bar-chart fa-5x" aria-hidden="true"></i> </button></td>
+	 </tr>
   
-
 </tbody>
 
-	
-	
 	
 	
 </table>
