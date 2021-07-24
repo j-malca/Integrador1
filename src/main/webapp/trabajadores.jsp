@@ -43,7 +43,7 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="input_nombres">Nombres</label>
-      <input type="text" class="form-control" id="input_nombres" value="" required >
+      <input type="text" class="form-control" id="input_nombres" value="" name="" required >
     </div>
     <div class="col-md-4 mb-3">
       <label for="input_apellido_paterno">Apellido Paterno</label>
@@ -63,7 +63,7 @@
 	<div class="col-md-4 mb-3">
       <label for="validationDefault04">Tipo de Documento</label>
       <select class="custom-select" id="validationDefault04" required>
-        <option selected disabled value="">Elegir</option>
+        <option selected disabled value="" name="tipo_doc">Elegir</option>
         <option value="1">Dni</option>
         <option value="2">Pasaporte</option>
         <option value="3" >Tpt</option>
@@ -72,7 +72,7 @@
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationDefault04">Pais</label>
-      <select class="custom-select" id="validationDefault04" required>
+      <select class="custom-select" id="validationDefault04"  name="pais" required>
         <option selected disabled value="">Elegir</option>
         <option value="1" >Peru</option>
         <option value="2">Venezuela</option>
@@ -93,15 +93,7 @@
   
   <div class="form-row">
     
-    <div class="col-md-4 mb-3">
-      <label for="validationDefault04">Tipo de Usuario</label>
-      <select class="custom-select" id="validationDefault04" required>
-        <option selected disabled value="">Elegir</option>
-        <option>admin</option>
-        <option>User</option>
-     
-      </select>
-    </div>
+    
     
   </div>
   
@@ -174,7 +166,45 @@
        
         
 </table>
+            <%
+            if (request.getParameter("enviar") != null) {
+               int ubi = Integer.parseInt(request.getParameter("ubic"));
+               int id_preg1 = Integer.parseInt(request.getParameter("id_pregu1"));
+                int id_preg2 = Integer.parseInt(request.getParameter("id_pregu2"));
+                int id_preg3 = Integer.parseInt(request.getParameter("id_pregu3"));
+                int id_preg4 = Integer.parseInt(request.getParameter("id_pregu4"));
+                int id_preg5 = Integer.parseInt(request.getParameter("id_pregu5"));
+                int id_preg6 = Integer.parseInt(request.getParameter("id_pregu6"));
+                int id_preg7 = Integer.parseInt(request.getParameter("id_pregu7"));
+                int id_preg8 = Integer.parseInt(request.getParameter("id_pregu8"));
+		int id_preg9 = Integer.parseInt(request.getParameter("id_pregu8"));
+		int id_preg10 = Integer.parseInt(request.getParameter("id_pregu8"));
+                String respu1 = request.getParameter("resput1");
+                String respu2 = request.getParameter("resput2");
+                String respu3 = request.getParameter("resput3");
+                String respu4 = request.getParameter("resput4");
+                String respu5 = request.getParameter("resput5");
+                String respu6 = request.getParameter("resput6");
+                String respu7 = request.getParameter("resput7");
+                String respu8 = request.getParameter("resput8");
+		String respu9 = request.getParameter("resput8");
+		String respu10 = request.getParameter("resput8");
+
+                try {
+                   
+                    Statement st1=null;
                     
+                    Class.forName("com.mysql.jdbc.Driver");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost/dbscovid?user=root&password=");
+                    st=con.createStatement();
+                    st.executeUpdate("");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                } catch (Exception e) {
+                    out.print(e);
+                }
+
+            }
+        %>         
         </div>        
         
         

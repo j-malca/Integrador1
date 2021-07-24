@@ -32,38 +32,16 @@
 
 
 
-	<form class="container-fluid" action="Registrar_preguntas.jsp" method="post" >
-		
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="cate_preguntas"> Categoria Preguntas </label>   
-      <select class="custom-select" id="cate_preguntas" name="cate_preguntas"  required>
-        <option selected disabled value="">Elegir</option>
-        <option value="01">Medicas</option>
-        <option value="02" >COVID-19</option>
-        <option value="03" >Otros</option>
-     
-      </select>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="cali_preguntas">Calificacion Pregunta</label>
-    <select class="custom-select" id="cali_preguntas" name="cali_preguntas" required>
-        <option selected disabled value="">Elegir</option>
-        <option value="01" >Alto</option>
-        <option value="02">Medio</option>
-        <option value="03">Bajo</option>
-     
-      </select>
-    </div>
-    
+	<form class="container-fluid" action="Categoria_preguntas.jsp" method="post" >
+		    
     
   </div>
 
 
 <div class="form-row">
 <div class="col-md-11 mb-4">
-      <label for="validationDefaultUsername">Pregunta </label>
-      <input type="text" class="form-control" id="txtpregunta" name="txtpregunta" value="" required>
+      <label for="validationDefaultUsername">GATEGORIA</label>
+      <input type="text" class="form-control" id="txtpregunta" name="TXTCATE" value="" required>
       <br>
       <button type="submit" name="enviar" class="btn btn-primary">Guardar <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
 
@@ -79,9 +57,8 @@
      %>
 <%
             if (request.getParameter("enviar") != null) {
-                String cate_preguntas = request.getParameter("cate_preguntas");
-                String cali_preguntas = request.getParameter("cali_preguntas");
-                String pregunta = request.getParameter("txtpregunta");
+                String cate_preguntas = request.getParameter("TXTCATE");
+                        
 
                 try {
                     
@@ -89,7 +66,7 @@
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost/dbscovid?user=root&password=");
                     st=con.createStatement();
-                    st.executeUpdate("insert into  PREGUNTAS (id_cate_preg,id_cal_preg,desc_preg) values ('"+cate_preguntas+"','"+cali_preguntas+"','"+pregunta+"');");
+                    st.executeUpdate("insert into  PREGUNTAS (id_cate_preg) values ('"+cate_preguntas+"');");
                     request.getRequestDispatcher("Preguntas.jsp").forward(request, response);
                 } catch (Exception e) {
                     out.print(e);
@@ -117,10 +94,8 @@
   <thead>
       
        <tr >
-      <th  scope="col">ID</th>
+      <th  scope="col">N°</th>
       <th scope="col">categoria </th>
-      <th  scope="col">Calificacion </th>
-      <th scope="col">Pregunta</th>
       <th scope="col">Acciones</th>
     </tr>
     
@@ -134,15 +109,14 @@
             Class.forName("com.mysql.jdbc.Driver");
            con = DriverManager.getConnection("jdbc:mysql://localhost/dbscovid?user=root&password=");
            st = con.createStatement();
-                                    rs = st.executeQuery("SELECT @i := @i + 1 as Numeracion,preguntas.id_pregunta,CATEGORIA_PREGUNTAS.des_cate_preg,CALIFICACION_PREGUNTA.desc_cal_preg,desc_preg FROM preguntas INNER JOIN CATEGORIA_PREGUNTAS on CATEGORIA_PREGUNTAS.id_cate_preg = preguntas.id_cate_preg INNER JOIN CALIFICACION_PREGUNTA on CALIFICACION_PREGUNTA.id_cal_preg = preguntas.id_cal_preg cross join (select @i := 0)r;");
+                                    rs = st.executeQuery("SELECT row_number()OVER (ORDER BY id_cate_preg ) AS contador,id_cate_preg ,des_cate_preg   FROM CATEGORIA_PREGUNTAS");
                                     while (rs.next()){
                                     
                                         %>                                          
                                       <tr>
                                          <th scope="row"> <%= rs.getString(1) %> </th>
                                         <td><%= rs.getString(3) %></td>
-                                        <td><%= rs.getString(4) %></td>
-                                        <td><%= rs.getString(5) %></td>
+                                      
                                         <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
                                         <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
                                       </tr>  
